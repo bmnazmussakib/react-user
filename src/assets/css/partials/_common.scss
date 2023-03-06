@@ -1,0 +1,28 @@
+@import "color";
+
+.section-title {
+  font-family: "Montserrat", sans-serif;
+  font-size: 3rem;
+  font-weight: 600;
+  text-align: center;
+  color: #0884e9;
+  margin-bottom: 3rem;
+}
+
+.section-text {
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  color: #424242;
+}
+
+.card-title {
+  font-family: "Raleway", sans-serif;
+  color: #424242;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.section {
+  padding: 80px 0;
+}

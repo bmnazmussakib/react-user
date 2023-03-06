@@ -1,0 +1,213 @@
+.section-title {
+  font-family: "Montserrat", sans-serif;
+  font-size: 3rem;
+  font-weight: 600;
+  text-align: center;
+  color: #0884e9;
+  margin-bottom: 3rem;
+}
+
+.section-text {
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  color: #424242;
+}
+
+.card-title {
+  font-family: "Raleway", sans-serif;
+  color: #424242;
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.section {
+  padding: 80px 0;
+}
+
+#root {
+  width: 100;
+}
+
+.topBanner {
+  background: url("../images/banner.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-height: 500px;
+  position: relative;
+}
+.topBanner .topBannerOverlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  left: 0;
+  top: 0;
+}
+.topBanner .banner-text {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-transform: uppercase;
+  text-align: center;
+}
+.topBanner .banner-text h1 {
+  color: #0884e9;
+  font-size: 4rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+}
+.topBanner .banner-text p {
+  color: #fff;
+  font-size: 1.3rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+}
+
+.services .card {
+  text-align: center;
+  height: 25rem;
+}
+.services .card .card-img {
+  font-size: 8rem;
+  color: #0884e9;
+}
+
+.navbar {
+  transition: all 0.5s;
+}
+.navbar .navbar-title {
+  color: #ffffff;
+}
+
+.navbar-scroll {
+  box-shadow: 0px 1px 7px -3px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 0px 1px 7px -3px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 1px 7px -3px rgba(0, 0, 0, 0.75);
+}
+.navbar-scroll .navbar-title {
+  color: #0884e9;
+}
+.navbar-scroll .nav .nav-link {
+  color: #444444;
+}
+
+.analysis .analysis-chart {
+  width: 100%;
+  height: 300px;
+}
+
+.how-work {
+  background: url("../images/banner.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-height: 400px;
+  position: relative;
+}
+.how-work .topBannerOverlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  left: 0;
+  top: 0;
+}
+.how-work .counter {
+  text-align: center;
+  position: relative;
+  z-index: 99999;
+  color: #fff;
+  margin-top: 30%;
+}
+.how-work .counter h3 {
+  font-size: 3.5rem;
+  font-weight: 600;
+}
+.how-work .counter p {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+.how-work .counter hr {
+  margin: auto;
+}
+
+.video .video-card h4 {
+  color: #0884e9;
+  font-size: 2rem;
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
+}
+.video .video-card .play-btn {
+  color: #0884e9;
+  font-size: 3rem;
+  cursor: pointer;
+  display: inline-block;
+  transition: all 0.3s;
+}
+.video .video-card .play-btn:hover {
+  color: #0b6ebe;
+  transform: scale(1.2);
+}
+
+.testimonial .single-slider .client-img {
+  font-size: 4rem;
+}
+
+.footer .footer-top {
+  padding: 50px 0;
+}
+.footer .footer-top .footer-widgets ul {
+  list-style: none;
+  padding: 0;
+}
+.footer .copyright {
+  background-color: #0884e9;
+  padding: 10px 0;
+  color: #fff;
+}
+.footer .copyright a {
+  color: #fff;
+}
+
+.page-top {
+  background: url("../images/banner.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-height: 300px;
+  position: relative;
+}
+.page-top .page-top-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  left: 0;
+  top: 0;
+}
+.page-top .banner-text {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-transform: uppercase;
+  text-align: center;
+}
+.page-top .banner-text h1 {
+  color: #0884e9;
+  font-size: 4rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+}
+.page-top .banner-text p {
+  color: #fff;
+  font-size: 1.3rem;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+}/*# sourceMappingURL=style.css.map */
