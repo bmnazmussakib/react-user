@@ -33,12 +33,12 @@ export default class extends Component {
           <Container>
             <Navbar.Brand href="#home" className="navbar-title">Navbar</Navbar.Brand>
             <Nav className="ms-auto nav">
-              <Nav.Link href="" className="nav-link"><Link to={`/`}>Home</Link></Nav.Link>
-              <Nav.Link href="" className="nav-link"><Link>Services</Link></Nav.Link>
-              <Nav.Link href="" className="nav-link"><Link>Course</Link></Nav.Link>
-              <Nav.Link href="" className="nav-link"><Link>Portfolio</Link></Nav.Link>
-              <Nav.Link href="" className="nav-link"><Link>Contact</Link></Nav.Link>
-              <Nav.Link href="" className="nav-link"><Link to={'about'}>About</Link></Nav.Link>
+              <Nav.Link href="" className="nav-link">Home</Nav.Link>
+              <Nav.Link href="" className="nav-link">Services</Nav.Link>
+              <Nav.Link href="" className="nav-link">Course</Nav.Link>
+              <Nav.Link href="" className="nav-link">Portfolio</Nav.Link>
+              <Nav.Link href="" className="nav-link">Contact</Nav.Link>
+              <Nav.Link href="" className="nav-link">About</Nav.Link>
             </Nav>
           </Container>
         </Navbar>

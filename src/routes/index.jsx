@@ -1,25 +1,22 @@
-import React from 'react';
-import Home from '../pages/Home';
-import About from '../pages/About';
-import {
-    BrowserRouter,
-    createBrowserRouter,
-    Route,
-    RouterProvider,
-    Routes,
-  } from "react-router-dom";
+import React, { Component } from 'react'
+import Home from '../pages/Home/index'
+import About from '../pages/About/index'
+import Course from '../pages/Course/index'
+import Projects from '../pages/Projects/index'
+import Contact from '../pages/Contact/index'
+import Service from '../pages/Service/index'
 
-const Router = () => {
+export default class Index extends Component {
+  render() {
     return (
-        <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Home />}>
-          <Route index element={<Home />} />
-          <Route path="about" element={<About />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
-    );
-};
-
-export default Router;
+      <div>
+        {/* <Home /> */}
+        {/* <About /> */}
+        {/* <Course /> */}
+        {/* <Projects /> */}
+        {/* <Contact /> */}
+        <Service/>
+      </div>
+    )
+  }
+}
