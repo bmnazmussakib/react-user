@@ -1,3 +1,4 @@
+import axios from 'axios'
 import React, { Component } from 'react'
 import Analysis from '../../components/Analysis'
 import HowWork from '../../components/HowWork'
