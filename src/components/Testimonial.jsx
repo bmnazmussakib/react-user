@@ -5,8 +5,23 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import { RxAvatar } from "react-icons/rx";
+import RestClient from "../RestAPI/RestClient";
+import appURL from "../RestAPI/appURL";
 
 export default class Testimonial extends Component {
+  constructor() {
+    super();
+    this.state = {
+      data: [],
+    };
+  }
+
+  componentDidMount() {
+    RestClient.GetRequest(appURL.testimonial).then((res) => {
+      this.setState({ data: res });
+    });
+  }
+
   render() {
     var settings = {
       autoplay: true,
@@ -19,89 +34,33 @@ export default class Testimonial extends Component {
       vertical: true,
     };
 
+    const data = this.state.data;
+    const myView = data.map((data) => {
+      return (
+        <div>
+          <Row className="justify-content-center">
+            <Col lg={6} md={6} sm={12} className="text-center">
+              <div className="single-slider text-center">
+                <div className="client-img">
+                  <img src={data.client_image} alt="" />
+                </div>
+                <h3 className="card-title">{data.client_name}</h3>
+                <p className="section-text">
+                  {data.client_description}
+                </p>
+              </div>
+            </Col>
+          </Row>
+        </div>
+      );
+    });
+
     return (
       <Fragment>
         <Container className="testimonial section">
           <h2 className="section-title">Testimonial</h2>
 
-          <Slider {...settings}>
-            <div>
-              <Row className="justify-content-center">
-                <Col lg={6} md={6} sm={12} className="text-center">
-                  <div className="single-slider text-center">
-                    <div className="client-img">
-                      <RxAvatar />
-                    </div>
-                    <h3 className="card-title">Web Development</h3>
-                    <p className="section-text">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Consequuntur consectetur, impedit quo provident debitis
-                      ipsam facilis! Sed, natus rem architecto dolorum neque
-                      placeat dignissimos cum, sit impedit eos numquam
-                      voluptatem.
-                    </p>
-                  </div>
-                </Col>
-              </Row>
-            </div>
-            <div>
-              <Row className="justify-content-center">
-                <Col lg={6} md={6} sm={12} className="text-center">
-                  <div className="single-slider text-center">
-                    <div className="client-img">
-                      <RxAvatar />
-                    </div>
-                    <h3 className="card-title">Web Development</h3>
-                    <p className="section-text">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Consequuntur consectetur, impedit quo provident debitis
-                      ipsam facilis! Sed, natus rem architecto dolorum neque
-                      placeat dignissimos cum, sit impedit eos numquam
-                      voluptatem.
-                    </p>
-                  </div>
-                </Col>
-              </Row>
-            </div>
-            <div>
-              <Row className="justify-content-center">
-                <Col lg={6} md={6} sm={12} className="text-center">
-                  <div className="single-slider text-center">
-                    <div className="client-img">
-                      <RxAvatar />
-                    </div>
-                    <h3 className="card-title">Web Development</h3>
-                    <p className="section-text">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Consequuntur consectetur, impedit quo provident debitis
-                      ipsam facilis! Sed, natus rem architecto dolorum neque
-                      placeat dignissimos cum, sit impedit eos numquam
-                      voluptatem.
-                    </p>
-                  </div>
-                </Col>
-              </Row>
-            </div>
-            <div>
-              <Row className="justify-content-center">
-                <Col lg={6} md={6} sm={12} className="text-center">
-                  <div className="single-slider text-center">
-                    <div className="client-img">
-                      <RxAvatar />
-                    </div>
-                    <h3 className="card-title">Web Development</h3>
-                    <p className="section-text">
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                      Consequuntur consectetur, impedit quo provident debitis
-                      ipsam facilis! Sed, natus rem architecto dolorum neque
-                      placeat dignissimos cum, sit impedit eos numquam
-                      voluptatem.
-                    </p>
-                  </div>
-                </Col>
-              </Row>
-            </div>
-          </Slider>
+          <Slider {...settings}>{myView}</Slider>
         </Container>
       </Fragment>
     );

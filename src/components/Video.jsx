@@ -3,6 +3,8 @@ import { Button, Col, Container, Modal, Row } from "react-bootstrap";
 import { FaPlayCircle } from "react-icons/fa";
 import { BigPlayButton, Player } from "video-react";
 import 'video-react/dist/video-react.css';
+import appURL from "../RestAPI/appURL";
+import RestClient from "../RestAPI/RestClient";
 
 
 
@@ -12,8 +14,20 @@ export default class Video extends Component {
     constructor(){
         super();
         this.state = {
-            show: false
+            show: false,
+            videoDescription: '',
+            videoURL: ''
         }
+    }
+
+    componentDidMount() {
+      RestClient.GetRequest(appURL.video)
+      .then((res) => {
+        this.setState({ 
+          videoDescription: res[0].video_description,
+          videoURL: res[0].video_url
+         });
+      });
     }
 
 
@@ -21,9 +35,11 @@ export default class Video extends Component {
     modalClose = () => {this.setState({show: false})}
 
 
-
-
   render() {
+
+    const videoURL = this.state.videoURL;
+    const description = this.state.videoDescription;
+
     return (
       <Fragment>
         <Container className="video section">
@@ -32,14 +48,7 @@ export default class Video extends Component {
               <div className="video-card text-center">
                 <h4>How I do</h4>
                 <p className="section-text">
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                  Aspernatur ea nemo iusto cumque, autem cupiditate repudiandae
-                  soluta temporibus saepe reiciendis, numquam quod magni odio!
-                  Velit nam, ut voluptatum qui, perferendis suscipit, odit
-                  ratione neque soluta expedita facilis et rerum nesciunt
-                  aliquid excepturi cupiditate consequatur ducimus vel rem ipsum
-                  fugit. Omnis unde nisi, nobis a laudantium saepe temporibus
-                  totam quod tempore.
+                  {description}
                 </p>
                 <p className="play-btn" onClick={this.modalOpen}>
                   <FaPlayCircle />
@@ -51,7 +60,7 @@ export default class Video extends Component {
               {/* MODAL */}
               <Modal show={this.state.show} onHide={this.modalClose} centered size="lg">
                 <Modal.Body >
-                  <Player src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4" >
+                  <Player src={videoURL}>
                   <BigPlayButton position="center" />
                   </Player>
                 </Modal.Body>
@@ -61,9 +70,6 @@ export default class Video extends Component {
                   </Button>
                 </Modal.Footer>
               </Modal>
-
-
-
             </Col>
           </Row>
         </Container>
