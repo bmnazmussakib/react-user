@@ -1,3 +1,4 @@
+import axios from 'axios'
 import React, { Component } from 'react'
 import Analysis from '../../components/Analysis'
 import HowWork from '../../components/HowWork'
@@ -9,17 +10,20 @@ import TopBanner from '../../components/TopBanner'
 import Video from '../../components/Video'
 
 export default class index extends Component {
+
+
+
   render() {
     return (
       <div>
         <TopBanner />
         <Services />
         <Analysis />
-        <HowWork/>
+        <HowWork />
         <RecentProjects />
         <OurServices />
-        <Video/>
-        <Testimonial/>
+        <Video />
+        <Testimonial />
       </div>
     )
   }
